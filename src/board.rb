@@ -1,16 +1,24 @@
+require_relative "null_piece"
+require "byebug"
+
 class Board
     def initialize
-        @rows = Array.new(8) {Array.new(8)}
-        #FIXME: change this to be an instance of Null_Piece
-        @null_piece = nil
+
+        #grid of empty squares 
+        @null_piece = NullPiece.instance
+        @rows = Array.new(8) {Array.new(8, @null_piece)}
+        @rows[0][0] = Piece.new(:white, self, [0, 0])
     end
     def move_piece(start_pos, end_pos)
-        raise "error" if @rows[*start_pos] == @null_piece
-        raise "error" if @rows[*end_pos] != @null_piece
-        current_piece = @rows[*start_pos]
+      start_x, start_y = *start_pos
+      target_x, target_y = *end_pos
+      debugger
+      raise "error: No piece found!!!" if @rows[start_x][start_y] == @null_piece
+      raise "error: Target Occupied" unless @rows[target_x][target_y] == @null_piece
+        current_piece = @rows[start_x][start_y]
         current_piece.pos = end_pos
-        @rows[*start_pos] = @null_piece
-        @rows[*end_pos] = current_piece
+        @rows[start_x][start_y] = @null_piece
+        @rows[target_x][target_y] = current_piece
     end
 
 end
