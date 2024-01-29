@@ -20,6 +20,8 @@ class Board
         @rows[start_x][start_y] = @null_piece
         @rows[target_x][target_y] = current_piece
     end
-
-end
-  
+    
+    def [](pos)
+      @rows[pos[0]][pos[1]]  
+    end
+  end 
