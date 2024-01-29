@@ -1,6 +1,9 @@
+require_relative "moveable.rb"
 #queens, bishops, rooks
 
 module Slideable
+    #a slideable piece is moveable
+  extend Moveable
     STRAIGHT_DIRECTS = [[0,1],[1,0],[0,-1],[-1,0]]
     DIAGONAL_DIRECTS = [[-1, 1], [1,1],[1,-1],[-1,-1]]
 
@@ -12,9 +15,11 @@ module Slideable
     def pos
         raise NotImplementedError
     end
+
     def board
         raise NotImplementedError
     end
+
     def move_directs
         raise NotImplementedError
     end

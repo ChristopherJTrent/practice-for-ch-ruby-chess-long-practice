@@ -1,5 +1,8 @@
+require_relative "moveable.rb"
 #knights, kings
 module Steppable
+  #a steppable piece is moveable
+  extend Moveable
     KING_DIRECTS = [[0,1],[1,0],[0,-1],[-1,0], [-1, 1], [1,1],[1,-1],[-1,-1]]
     KNIGHT_DIRECTS = [[2,1], [1,2], [-1,2], [-2,1], [-2,-1], [-1,-2], [1,-2], [2,-1]]
     def moves
