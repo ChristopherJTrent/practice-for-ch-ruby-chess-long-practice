@@ -12,4 +12,7 @@ class Rook < Piece
     def move_directs
         STRAIGHT_DIRECTS
     end
+    def empty?
+        false
+    end
 end

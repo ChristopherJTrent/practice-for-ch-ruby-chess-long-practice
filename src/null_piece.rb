@@ -1,12 +1,17 @@
 require_relative "piece.rb"
 require "singleton"
 class NullPiece < Piece 
-  #obtains behavior of singleton module
-include Singleton
-def initialize
+    #obtains behavior of singleton module
+    include Singleton
+    def initialize
 
-end
+    end
 
+    def symbol
+        ' '
+    end
 
-
+    def empty?
+        true
+    end
 end

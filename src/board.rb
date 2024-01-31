@@ -10,11 +10,11 @@ class Board
         @rows[0][0] = Piece.new(:white, self, [0, 0])
     end
     def move_piece(start_pos, end_pos)
-      start_x, start_y = *start_pos
-      target_x, target_y = *end_pos
-      debugger
-      raise "error: No piece found!!!" if @rows[start_x][start_y] == @null_piece
-      raise "error: Target Occupied" unless @rows[target_x][target_y] == @null_piece
+        start_x, start_y = *start_pos
+        target_x, target_y = *end_pos
+        debugger
+        raise "error: No piece found!!!" if @rows[start_x][start_y].empty?
+        raise "error: Target Occupied" unless @rows[target_x][target_y].empty?
         current_piece = @rows[start_x][start_y]
         current_piece.pos = end_pos
         @rows[start_x][start_y] = @null_piece

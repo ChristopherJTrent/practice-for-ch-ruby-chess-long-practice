@@ -9,7 +9,14 @@ class Piece
         @pos = pos  
     end
 
+    def to_s
+        symbol
+    end
+
     def symbol
         color == :black ? BLACK_SYMBOL : WHITE_SYMBOL
+    end
+    def empty?
+        true
     end
 end

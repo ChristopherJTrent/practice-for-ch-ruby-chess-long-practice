@@ -8,8 +8,10 @@ class Bishop < Piece
     def symbol
         color == :black ? BLACK_SYMBOL : WHITE_SYMBOL
     end
-
     def move_directs
         DIAGONAL_DIRECTS
+    end
+    def empty?
+        false
     end
 end

@@ -13,4 +13,7 @@ class Queen < Piece
     def move_directs
         STRAIGHT_DIRECTS + DIAGONAL_DIRECTS
     end
+    def empty?
+        false
+    end
 end 
