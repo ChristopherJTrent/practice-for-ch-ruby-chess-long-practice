@@ -21,7 +21,6 @@ class Board
     def move_piece(start_pos, end_pos)
         start_x, start_y = *start_pos
         target_x, target_y = *end_pos
-        debugger
         raise "error: No piece found!!!" if @rows[start_x][start_y].empty?
         raise "error: Target Occupied" unless @rows[target_x][target_y].empty?
         current_piece = @rows[start_x][start_y]
@@ -35,8 +34,11 @@ class Board
     end
     def render
       @rows.each {|row| puts row.join(" ")}
+      ''
     end
-
+    def inspect
+        ''
+    end
    private
     def gen_start_pos(color)
       pawns = []

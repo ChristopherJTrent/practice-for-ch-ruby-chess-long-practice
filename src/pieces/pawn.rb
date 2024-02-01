@@ -7,7 +7,7 @@ include Moveable
     WHITE_SYMBOL = '♙'
     BLACK_SYMBOL = '♟︎'
     def initialize(*var_args)
-        super(var_args)
+        super(*var_args)
         has_moved = false
     end
     def symbol
